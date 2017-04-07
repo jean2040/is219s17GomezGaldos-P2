@@ -113,6 +113,21 @@ $(document).ready( function() {
 		}
 
 	});
+
+	$('#nextPhoto').click(function(){
+		//alert("testing");
+		if (mCurrentIndex <= mImages.length){
+		mCurrentIndex = mCurrentIndex + 1;
+		}else{
+		mCurrentIndex = 0;
+		}
+		$('#photo').attr('src', mImages[mCurrentIndex].url);
+		$('p.location').text("Location: " + mImages[mCurrentIndex].location);
+		$('p.description').text("Description: " + mImages[mCurrentIndex].description);
+		$('p.date').text("Date: " + mImages[mCurrentIndex].date);
+
+
+	});
 	
 });
 
