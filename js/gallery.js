@@ -50,7 +50,7 @@ var mRequest = new XMLHttpRequest();
 var mImages = [];
 
 // Holds the retrived JSON information
-var mJson;
+var mJson = "";
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
@@ -64,7 +64,7 @@ mRequest.onreadystatechange = function() {
 		// Let’s try and see if we can parse JSON
 		mJson = JSON.parse(mRequest.responseText);
 		// Let’s print out the JSON; It will likely show as “obj”
-		console.log(mJson);
+		//console.log(mJson);
 		} catch(err) {
 		console.log(err.message)
 		}
@@ -94,6 +94,23 @@ window.addEventListener('load', function() {
 	
 	console.log('window loaded');
 
+	//iterating thorugh JSON object
+	console.log(mJson);
+	console.log(mJson.images.length);
+	
+	mJson.images.forEach( function (arrayItem)
+		{
+			var x = arrayItem.description;
+			console.log(x);
+		});
+		
+		
+		//mImages.push(new GalleryImage(image.imgLocation, image.description, image.date, image.imgPath));
+	
+
+	//console.log(mImages);
+
+
 }, false);
 
 function GalleryImage(location , description, date, url) {
@@ -102,9 +119,12 @@ function GalleryImage(location , description, date, url) {
 	//2. description of photo
 	//3. the date when the photo was taken
 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
-	this.location;
-	this.description;
-	this.date;
-	this.url;
+	this.location = location;
+	this.description = description;
+	this.date = date;
+	this.url = url;
 }
+
+var imagen1 = new GalleryImage("there", "sample","04/8/7","/image2");
+console.log(imagen1);
 
