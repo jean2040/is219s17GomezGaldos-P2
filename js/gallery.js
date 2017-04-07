@@ -54,7 +54,24 @@ var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'insert_url_here_to_image_json';
+var mUrl = 'images.json';
+
+
+mRequest.onreadystatechange = function() {
+	// Do something interesting if file is opened successfully
+	if (mRequest.readyState == 4 && mRequest.status == 200) {
+		try {
+		// Let’s try and see if we can parse JSON
+		mJson = JSON.parse(mRequest.responseText);
+		// Let’s print out the JSON; It will likely show as “obj”
+		console.log(mJson);
+		} catch(err) {
+		console.log(err.message)
+		}
+	}
+};
+mRequest.open("GET",mURL, true);
+mRequest.send();
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
@@ -79,10 +96,15 @@ window.addEventListener('load', function() {
 
 }, false);
 
-function GalleryImage() {
+function GalleryImage(location , description, date, url) {
 	//implement me as an object to hold the following data about an image:
 	//1. location where photo was taken
 	//2. description of photo
 	//3. the date when the photo was taken
 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
+	this.location;
+	this.description;
+	this.date;
+	this.url;
 }
+
