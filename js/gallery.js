@@ -99,6 +99,18 @@ $(document).ready( function() {
 	
 	// This initially hides the photos' metadata information
 	//$('.details').eq(0).hide();
+
+	$('.moreIndicator').click(function(){
+	alert("hola");
+	//if(this.hasClass('rot90')){
+	//	this.removeClass('rot90');
+	//	this.addClass('rot270');	
+	//}else{
+	//	this.removeClass('rot270');
+	//	this.addClass('rot90');
+	//}
+
+	});
 	
 });
 
