@@ -37,7 +37,16 @@ function swapPhoto() {
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
+	 
+	$('#photo').attr('src', mImages[mCurrentIndex].url);
+	if (mCurrentIndex <= mImages.length){
+		mCurrentIndex = mCurrentIndex + 1;
+	}else{
+		mCurrentIndex = 0;
+	}
+	//
 	console.log('swap photo');
+	//console.log(mImages[mCurrentIndex].url);
 }
 
 // Counter for the mImages array
@@ -107,7 +116,7 @@ window.addEventListener('load', function() {
 		//
 	
 
-	console.log(mImages)
+	console.log(mImages[0].url);
 
 
 }, false);
