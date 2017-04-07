@@ -98,17 +98,16 @@ window.addEventListener('load', function() {
 	console.log(mJson);
 	console.log(mJson.images.length);
 	
-	mJson.images.forEach( function (arrayItem)
+	mJson.images.forEach( function (image)
 		{
-			var x = arrayItem.description;
-			console.log(x);
+			mImages.push(new GalleryImage(image.imgLocation, image.description, image.date, image.imgPath));
 		});
 		
 		
-		//mImages.push(new GalleryImage(image.imgLocation, image.description, image.date, image.imgPath));
+		//
 	
 
-	//console.log(mImages);
+	console.log(mImages)
 
 
 }, false);
@@ -125,6 +124,5 @@ function GalleryImage(location , description, date, url) {
 	this.url = url;
 }
 
-var imagen1 = new GalleryImage("there", "sample","04/8/7","/image2");
-console.log(imagen1);
+
 
