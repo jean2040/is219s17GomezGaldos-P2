@@ -39,6 +39,9 @@ function swapPhoto() {
 	//from the JSON string
 	 
 	$('#photo').attr('src', mImages[mCurrentIndex].url);
+	$('p.location').text("Location: " + mImages[mCurrentIndex].location);
+	$('p.description').text("Description: " + mImages[mCurrentIndex].description);
+	$('p.date').text("Date: " + mImages[mCurrentIndex].date);
 	if (mCurrentIndex <= mImages.length){
 		mCurrentIndex = mCurrentIndex + 1;
 	}else{
@@ -95,7 +98,7 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 $(document).ready( function() {
 	
 	// This initially hides the photos' metadata information
-	$('.details').eq(0).hide();
+	//$('.details').eq(0).hide();
 	
 });
 
