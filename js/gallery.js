@@ -75,12 +75,8 @@ var $_GET = getQueryParams(document.location.search);
 	
 	mUrl = $_GET["json"];
 	}
+console.log(mRequest.status);
 
-if (mRequest.onerror == null){
-	alert("Json file is not valid. Default Gallery will display")
-	mUrl = 'images.json';
-	
-}
 mRequest.onreadystatechange = function() {
 	// Do something interesting if file is opened successfully
 	if (mRequest.readyState == 4 && mRequest.status == 200) {
