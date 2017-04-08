@@ -67,6 +67,14 @@ var mJson = "";
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 var mUrl = 'images.json';
+var $_GET = getQueryParams(document.location.search);
+
+	if($_GET["json"] === undefined){
+		console.log("No extra Json");
+	}else{
+	console.log($_GET["json"]); // would output "John"
+	mUrl = $_GET["json"];
+	}
 
 
 mRequest.onreadystatechange = function() {
@@ -195,6 +203,21 @@ function GalleryImage(location , description, date, url) {
 	this.description = description;
 	this.date = date;
 	this.url = url;
+}
+
+
+//GET FUNCTION FOR ALTERNATIVE  JSON FILE
+
+function getQueryParams(qs) {
+ qs = qs.split("+").join(" ");
+ var params = {},
+ tokens,
+ re = /[?&]?([^=]+)=([^&]*)/g;
+ while (tokens = re.exec(qs)) {
+ params[decodeURIComponent(tokens[1])]
+ = decodeURIComponent(tokens[2]);
+ }
+ return params;
 }
 
 
