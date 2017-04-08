@@ -72,26 +72,37 @@ var $_GET = getQueryParams(document.location.search);
 	if($_GET["json"] === undefined){
 		console.log("No extra Json");
 	}else{
-	 
+	
 	mUrl = $_GET["json"];
 	}
 
-
+if (mRequest.onerror == null){
+	alert("Json file is not valid. Default Gallery will display")
+	mUrl = 'images.json';
+	
+}
 mRequest.onreadystatechange = function() {
 	// Do something interesting if file is opened successfully
 	if (mRequest.readyState == 4 && mRequest.status == 200) {
+		
 		try {
 		// Let’s try and see if we can parse JSON
 		mJson = JSON.parse(mRequest.responseText);
 		// Let’s print out the JSON; It will likely show as “obj”
 		//console.log(mJson);
 		} catch(err) {
-		console.log(err.message)
+		console.log("this is the error" + err.message)
 		}
 	}
 };
+
 mRequest.open("GET",mUrl, true);
+
+
 mRequest.send();
+
+
+
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
