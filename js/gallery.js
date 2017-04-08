@@ -75,7 +75,7 @@ var $_GET = getQueryParams(document.location.search);
 	
 	mUrl = $_GET["json"];
 	}
-console.log(mRequest.status);
+
 
 mRequest.onreadystatechange = function() {
 	// Do something interesting if file is opened successfully
@@ -185,7 +185,10 @@ window.addEventListener('load', function() {
 	//iterating thorugh JSON object
 	//console.log(mJson);
 	//console.log(mJson.images.length);
-	
+	if(mJson.images == undefined){
+		alert("The JSON file is invalid,  Default Gallery will play");
+		window.location.href = "index.html?json=images.json" ;
+	}
 	mJson.images.forEach( function (image)
 		{
 			mImages.push(new GalleryImage(image.imgLocation, image.description, image.date, image.imgPath));
