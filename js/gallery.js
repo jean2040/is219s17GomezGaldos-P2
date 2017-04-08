@@ -38,18 +38,18 @@ function swapPhoto() {
 	//with a new image from your images array which is loaded 
 	//from the JSON string
 	 
-	$('#photo').attr('src', mImages[mCurrentIndex].url);
-	$('p.location').text("Location: " + mImages[mCurrentIndex].location);
-	$('p.description').text("Description: " + mImages[mCurrentIndex].description);
-	$('p.date').text("Date: " + mImages[mCurrentIndex].date);
-	if (mCurrentIndex <= mImages.length){
+	if (mCurrentIndex < mImages.length){
+		$('#photo').attr('src', mImages[mCurrentIndex].url);
+		$('p.location').text("Location: " + mImages[mCurrentIndex].location);
+		$('p.description').text("Description: " + mImages[mCurrentIndex].description);
+		$('p.date').text("Date: " + mImages[mCurrentIndex].date);
 		mCurrentIndex = mCurrentIndex + 1;
 	}else{
 		mCurrentIndex = 0;
 	}
 	//
 	console.log('swap photo');
-	//console.log(mImages[mCurrentIndex].url);
+	
 }
 
 // Counter for the mImages array
@@ -116,16 +116,33 @@ $(document).ready( function() {
 
 	$('#nextPhoto').click(function(){
 		//alert("testing");
-		if (mCurrentIndex <= mImages.length){
+		if (mCurrentIndex < mImages.length){
 		mCurrentIndex = mCurrentIndex + 1;
+		$('#photo').attr('src', mImages[mCurrentIndex].url);
+		$('p.location').text("Location: " + mImages[mCurrentIndex].location);
+		$('p.description').text("Description: " + mImages[mCurrentIndex].description);
+		$('p.date').text("Date: " + mImages[mCurrentIndex].date);
 		}else{
 		mCurrentIndex = 0;
 		}
+		
+
+
+	});
+
+	$('#prevPhoto').click(function(){
+		//alert("testing");
+		if (mCurrentIndex > 0 ){
 		$('#photo').attr('src', mImages[mCurrentIndex].url);
 		$('p.location').text("Location: " + mImages[mCurrentIndex].location);
 		$('p.description').text("Description: " + mImages[mCurrentIndex].description);
 		$('p.date').text("Date: " + mImages[mCurrentIndex].date);
 
+		mCurrentIndex = mCurrentIndex - 1;
+		}else{
+		mCurrentIndex = mImages.length - 1;
+		}
+		
 
 	});
 	
@@ -136,8 +153,8 @@ window.addEventListener('load', function() {
 	console.log('window loaded');
 
 	//iterating thorugh JSON object
-	console.log(mJson);
-	console.log(mJson.images.length);
+	//console.log(mJson);
+	//console.log(mJson.images.length);
 	
 	mJson.images.forEach( function (image)
 		{
@@ -148,7 +165,7 @@ window.addEventListener('load', function() {
 		//
 	
 
-	console.log(mImages[0].url);
+	//console.log(mImages[0].url);
 
 
 }, false);
