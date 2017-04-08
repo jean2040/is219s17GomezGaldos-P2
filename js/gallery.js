@@ -115,13 +115,17 @@ $(document).ready( function() {
 	});
 
 	$('#nextPhoto').click(function(){
+		
+		mLastFrameTime = new Date().getTime();
+		mCurrentIndex = mCurrentIndex + 1;
 		//alert("testing");
 		if (mCurrentIndex < mImages.length){
-		mCurrentIndex = mCurrentIndex + 1;
+		
 		$('#photo').attr('src', mImages[mCurrentIndex].url);
 		$('p.location').text("Location: " + mImages[mCurrentIndex].location);
 		$('p.description').text("Description: " + mImages[mCurrentIndex].description);
 		$('p.date').text("Date: " + mImages[mCurrentIndex].date);
+		
 		}else{
 		mCurrentIndex = 0;
 		$('#photo').attr('src', mImages[mCurrentIndex].url);
@@ -135,9 +139,11 @@ $(document).ready( function() {
 	});
 
 	$('#prevPhoto').click(function(){
+		mLastFrameTime = new Date().getTime();
+		mCurrentIndex = mCurrentIndex - 1;
 		//alert("testing");
-		if (mCurrentIndex > 0 ){
-			mCurrentIndex = mCurrentIndex - 1;
+		if (mCurrentIndex >= 0 ){
+			;
 			$('#photo').attr('src', mImages[mCurrentIndex].url);
 			$('p.location').text("Location: " + mImages[mCurrentIndex].location);
 			$('p.description').text("Description: " + mImages[mCurrentIndex].description);
