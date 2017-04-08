@@ -136,7 +136,7 @@ $(document).ready( function() {
 
 	$('#prevPhoto').click(function(){
 		//alert("testing");
-		if (mCurrentIndex >= 0 ){
+		if (mCurrentIndex > 0 ){
 			mCurrentIndex = mCurrentIndex - 1;
 			$('#photo').attr('src', mImages[mCurrentIndex].url);
 			$('p.location').text("Location: " + mImages[mCurrentIndex].location);
