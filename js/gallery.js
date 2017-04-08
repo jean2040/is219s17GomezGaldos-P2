@@ -124,6 +124,10 @@ $(document).ready( function() {
 		$('p.date').text("Date: " + mImages[mCurrentIndex].date);
 		}else{
 		mCurrentIndex = 0;
+		$('#photo').attr('src', mImages[mCurrentIndex].url);
+		$('p.location').text("Location: " + mImages[mCurrentIndex].location);
+		$('p.description').text("Description: " + mImages[mCurrentIndex].description);
+		$('p.date').text("Date: " + mImages[mCurrentIndex].date);
 		}
 		
 
@@ -132,15 +136,20 @@ $(document).ready( function() {
 
 	$('#prevPhoto').click(function(){
 		//alert("testing");
-		if (mCurrentIndex > 0 ){
-		$('#photo').attr('src', mImages[mCurrentIndex].url);
-		$('p.location').text("Location: " + mImages[mCurrentIndex].location);
-		$('p.description').text("Description: " + mImages[mCurrentIndex].description);
-		$('p.date').text("Date: " + mImages[mCurrentIndex].date);
+		if (mCurrentIndex >= 0 ){
+			mCurrentIndex = mCurrentIndex - 1;
+			$('#photo').attr('src', mImages[mCurrentIndex].url);
+			$('p.location').text("Location: " + mImages[mCurrentIndex].location);
+			$('p.description').text("Description: " + mImages[mCurrentIndex].description);
+			$('p.date').text("Date: " + mImages[mCurrentIndex].date);
 
-		mCurrentIndex = mCurrentIndex - 1;
+		
 		}else{
-		mCurrentIndex = mImages.length - 1;
+			mCurrentIndex = mImages.length - 1;
+			$('#photo').attr('src', mImages[mCurrentIndex].url);
+			$('p.location').text("Location: " + mImages[mCurrentIndex].location);
+			$('p.description').text("Description: " + mImages[mCurrentIndex].description);
+			$('p.date').text("Date: " + mImages[mCurrentIndex].date);
 		}
 		
 
