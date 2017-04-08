@@ -72,7 +72,7 @@ var $_GET = getQueryParams(document.location.search);
 	if($_GET["json"] === undefined){
 		console.log("No extra Json");
 	}else{
-	console.log($_GET["json"]); // would output "John"
+	 
 	mUrl = $_GET["json"];
 	}
 

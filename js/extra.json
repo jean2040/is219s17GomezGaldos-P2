@@ -1,0 +1,41 @@
+{
+    "images": [
+        {
+            "imgPath": "http://www.telegraph.co.uk/content/dam/Travel/leadAssets/26/53/machu_2653358a-xlarge.jpg",
+            "imgLocation": "Peru",
+            "description": "Machu Pichu",
+            "date": "01/01/2016"
+        },
+        {
+            "imgPath": "http://01.res.www.logitravel.com/microsites/circuitos/circuito/isla-pascua.jpg",
+            "imgLocation": "Chile",
+            "description": "Islas de Pascua",
+            "date": "01/02/2016"
+        },
+        {
+            "imgPath": "https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/2484/SITours/corcovado-mountain-and-christ-redeemer-statue-half-day-tour-in-rio-de-janeiro-128058.jpg",
+            "imgLocation": "Brasil",
+            "description": "Rio de Janeiro",
+            "date": "01/03/2016"
+        },
+        {
+            "imgPath": "http://www.worldofwanderlust.com/wp-content/uploads/2014/09/uyuni.jpg",
+            "imgLocation": "Bolivia",
+            "description": "Salar de Uyuni",
+            "date": "01/04/2016"
+        },
+        {
+            "imgPath": "http://www.worldofwanderlust.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-19-at-8.05.48-am.png",
+            "imgLocation": "Colombia",
+            "description": "The River of Five Colours",
+            "date": "01/05/2016"
+        },
+        {
+            "imgPath": "http://www.worldofwanderlust.com/wp-content/uploads/2014/09/hand-desert.jpg",
+            "imgLocation": "Chile",
+            "description": "Hand of the Desert",
+            "date": "01/06/2016"
+        }
+        
+  ]
+}
